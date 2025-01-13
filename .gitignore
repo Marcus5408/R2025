@@ -78,4 +78,10 @@ lint/intermediates/
 lint/generated/
 lint/outputs/
 lint/tmp/
+<<<<<<< HEAD
 # lint/reports/
+=======
+# lint/reports/
+
+RoadRunner/src/main/assets
+>>>>>>> 74b36f4 (Robot code)

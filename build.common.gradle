@@ -21,7 +21,11 @@ apply plugin: 'com.android.application'
 
 android {
 
+<<<<<<< HEAD
     compileSdkVersion 30
+=======
+    compileSdkVersion 29
+>>>>>>> 74b36f4 (Robot code)
 
     signingConfigs {
         release {
@@ -109,6 +113,13 @@ android {
     packagingOptions {
         pickFirst '**/*.so'
     }
+<<<<<<< HEAD
+=======
+    sourceSets.main {
+        jni.srcDirs = []
+        jniLibs.srcDir rootProject.file('libs')
+    }
+>>>>>>> 74b36f4 (Robot code)
     ndkVersion '21.3.6528147'
 }
 
