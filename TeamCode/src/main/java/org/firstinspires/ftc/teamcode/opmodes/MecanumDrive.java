@@ -52,7 +52,7 @@ public class MecanumDrive extends LinearOpMode {
             handleDriveControls();
             handleSpeedControls();
             handleUtilityControls();
-            updateTelemetry(robot.drivetrain.getImu());
+            updateTelemetry();
 
 
         }
@@ -79,6 +79,11 @@ public class MecanumDrive extends LinearOpMode {
         );
     }
 
+    private void handleIntakeControls() {
+        double armRotation = gamepad1.right_stick_y;
+
+    }
+
     private void handleSpeedControls() {
         // Adjust speed multiplier with bumpers
         // need to implement debouncing
@@ -103,7 +108,6 @@ public class MecanumDrive extends LinearOpMode {
         } else if (!gamepad1.left_bumper){
             lbPressed = false;
         }
-
     }
 
     private void handleUtilityControls() {
@@ -119,7 +123,7 @@ public class MecanumDrive extends LinearOpMode {
 
 
     // http://192.168.43.1:8080/dash
-    private void updateTelemetry(IMU imu) {
+    private void updateTelemetry() {
         telemetry.addData("=== DRIVER CONTROLS ===", "");
         telemetry.addData("Drive Power", "%.2f", -gamepad1.left_stick_y * DriveConstants.SPEED_MULTIPLIER);
         telemetry.addData("Turn Power", "%.2f", gamepad1.left_stick_x * DriveConstants.SPEED_MULTIPLIER);
@@ -148,8 +152,11 @@ public class MecanumDrive extends LinearOpMode {
         telemetry.addData("Speed", "Bumpers = Adjust Speed");
         telemetry.addData("Utility", "Y = Reset Encoders");
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 8969a43 ('')
         telemetry.update();
     }
 }

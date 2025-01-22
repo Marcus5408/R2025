@@ -30,6 +30,12 @@ public class Drivetrain {
     private double leftBackPower;
     private double rightBackPower;
 
+<<<<<<< HEAD
+=======
+    private YawPitchRollAngles orientation;
+    private AngularVelocity angularVelocity;
+
+>>>>>>> 8969a43 ('')
     /**
      * Constructor for the Drivetrain class
      * */
@@ -60,6 +66,9 @@ public class Drivetrain {
                 logoFacingDirection, usbFacingDirection
         );
         imu.initialize(new IMU.Parameters(orientationOnRobot));
+
+        orientation = imu.getRobotYawPitchRollAngles();
+        imu.getRobotAngularVelocity(AngleUnit.DEGREES);
 
 
         resetEncoders();
@@ -103,6 +112,7 @@ public class Drivetrain {
         leftBack.setPower(leftBackPower);
         rightBack.setPower(rightBackPower);
 
+<<<<<<< HEAD
         YawPitchRollAngles orientation = imu.getRobotYawPitchRollAngles();
         AngularVelocity angularVelocity = imu.getRobotAngularVelocity(AngleUnit.DEGREES);
 
@@ -116,11 +126,29 @@ public class Drivetrain {
         packet.put("Pitch (X) velocity", "%.2f Deg/Sec", angularVelocity.xRotationRate);
         packet.put("Roll (Y) velocity", "%.2f Deg/Sec", angularVelocity.yRotationRate);
 
+=======
+        TelemetryPacket packet = new TelemetryPacket();
+
+>>>>>>> 8969a43 ('')
         packet.put("Left Front Power", leftFrontPower);
         packet.put("Right Front Power", rightFrontPower);
         packet.put("Left Back Power", leftBackPower);
         packet.put("Right Back Power", rightBackPower);
         dashboard.sendTelemetryPacket(packet);
+    }
+
+    public void ImuHandle () {
+        // Dashboard telemetry
+        TelemetryPacket packet = new TelemetryPacket();
+
+        packet.put("Yaw (Z)",  orientation.getYaw(AngleUnit.DEGREES));
+        packet.put("Pitch (X)", orientation.getPitch(AngleUnit.DEGREES));
+        packet.put("Roll (Y)",  orientation.getRoll(AngleUnit.DEGREES));
+        dashboard.sendTelemetryPacket(packet);
+
+//        packet.put("Yaw (Z) velocity",  angularVelocity.zRotationRate);
+//        packet.put("Pitch (X) velocity",  angularVelocity.xRotationRate);
+//        packet.put("Roll (Y) velocity",  angularVelocity.yRotationRate);
     }
 
     //to decelerate the motors to zero
