@@ -14,15 +14,11 @@ android {
         buildConfigField "String", "APP_BUILD_TIME", '"' + (new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ", Locale.ROOT).format(new Date())) + '"'
     }
 
-<<<<<<< HEAD
     buildFeatures {
         buildConfig = true
     }
 
     compileSdkVersion 30
-=======
-    compileSdkVersion 29
->>>>>>> 74b36f4 (Robot code)
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8

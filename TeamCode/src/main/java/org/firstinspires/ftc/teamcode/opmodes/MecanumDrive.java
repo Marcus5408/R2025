@@ -239,24 +239,12 @@ public class MecanumDrive extends LinearOpMode {
         telemetry.addData("Drive", "Left Stick = Move + Turn");
         telemetry.addData("Speed", "Bumpers = Adjust Speed");
         telemetry.addData("Utility", "Y = Reset Encoders");
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 8969a43 ('')
-=======
->>>>>>> d2a1b37 (Update MecanumDrive.java)
-=======
 
         telemetry.addData("\nArm Rotate", "Right Joystick");
         telemetry.addData("X and Y turn the servo Clockwise and counterclockwise", "");
         telemetry.addData("B for ascension A to return to normal state", "");
         telemetry.addData("left bumper to reset servo", "");
 
->>>>>>> 27e429b ('')
         telemetry.update();
     }
 }

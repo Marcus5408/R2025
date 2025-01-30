@@ -23,10 +23,6 @@ android {
     }
 }
 
-<<<<<<< HEAD
-dependencies {
-    implementation project(':FtcRobotController')
-=======
 repositories {
     maven {
         url = 'https://maven.brott.dev/'
@@ -48,5 +44,4 @@ dependencies {
     // Add EasyOpenCV and AprilTag dependencies
     implementation 'org.openftc:easyopencv:1.7.0'
     implementation 'org.openftc:apriltag:2.0.0'
->>>>>>> 74b36f4 (Robot code)
 }
